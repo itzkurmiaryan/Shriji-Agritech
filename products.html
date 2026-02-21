@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products | Shri Ji AgriTech</title>
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container header-inner">
+      <img src="images/log.png" alt="Shriji AgriTech Logo" class="log">
+            <div class="logo">Shri Ji AgriTech</div>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="privacy.html">Legal</a>
+        <a href="order.html">Place Order</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="product-section">
+  <div class="container">
+    <h2>Our Product Catalog</h2>
+
+    <div class="grid">
+
+      <!-- Drip -->
+      <div class="product-card">
+        <img src="images/drip.jpg" alt="Drip Irrigation">
+        <h3>Drip Irrigation System</h3>
+        
+        <a href="product-detail.html?product=drip" class="btn">View Details</a>
+      </div>
+
+      <!-- HDPE -->
+      <div class="product-card">
+        <img src="images/hdpe.jpeg" alt="HDPE Pipe">
+        <h3>HDPE Pipe</h3>
+       
+        <a href="product-detail.html?product=hdpe" class="btn">View Details</a>
+      </div>
+
+      <!-- Mulch -->
+      <div class="product-card">
+        <img src="images/mulch.jpg" alt="Mulch Paper">
+        <h3>Mulch Paper</h3>
+      
+        <a href="product-detail.html?product=mulch" class="btn">View Details</a>
+      </div>
+
+      <!-- Crop Cover -->
+      <div class="product-card">
+        <img src="images/cropcover.jpg" alt="Plant Crop Cover">
+        <h3>Plant Crop Cover</h3>
+   
+        <a href="product-detail.html?product=cropcover" class="btn">View Details</a>
+      </div>
+
+      <!-- Chicken Manure -->
+      <div class="product-card">
+        <img src="images/chicken.jpeg" alt="Chicken Manure">
+        <h3>Chicken Manure</h3>
+     
+        <a href="product-detail.html?product=chicken" class="btn">View Details</a>
+      </div>
+
+      <!-- Crop Support Net -->
+      <div class="product-card">
+        <img src="images/cropsupport.jpg" alt="Crop Support Net">
+        <h3>Crop Support Net</h3>
+   
+        <a href="product-detail.html?product=cropsupportnet" class="btn">View Details</a>
+      </div>
+
+      <!-- Plant Clip -->
+      <div class="product-card">
+        <img src="images/plant.jpeg" alt="Plant Support Clip">
+        <h3>Plant Support Clip</h3>
+      
+        <a href="product-detail.html?product=plantclip" class="btn">View Details</a>
+      </div>
+
+      <!-- HDPE Lapeta -->
+      <div class="product-card">
+        <img src="images/hdpe.jpeg" alt="HDPE Lapeta Pipe">
+        <h3>HDPE Lapeta Pipe 4"</h3>
+     
+        <a href="product-detail.html?product=hdpelapeta" class="btn">View Details</a>
+      </div>
+
+      <!-- LD Lapeta -->
+      <div class="product-card">
+        <img src="images/ldlapeta.jpeg" alt="LD Lapeta Pipe">
+        <h3>LD Lapeta Pipe</h3>
+       
+        <a href="product-detail.html?product=ldlapeta" class="btn">View Details</a>
+      </div>
+
+      <!-- Mini Sprinkler -->
+      <div class="product-card">
+        <img src="images/mini.jpeg" alt="Mini Sprinkler">
+        <h3>Mini Sprinkler System</h3>
+      
+        <a href="product-detail.html?product=minisprinkler" class="btn">View Details</a>
+      </div>
+
+      <!-- Weed Mat -->
+      <div class="product-card">
+        <img src="images/weed.jpeg" alt="Weed Mat">
+        <h3>Weed Mat</h3>
+   
+        <a href="product-detail.html?product=weedmat" class="btn">View Details</a>
+      </div>
+
+      <!-- Tirpal -->
+      <div class="product-card">
+        <img src="images/tirpal.jpeg" alt="Agricultural Tirpal">
+        <h3>Agricultural Tirpal</h3>
+        
+        <a href="product-detail.html?product=tirpal" class="btn">View Details</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CHATBOT -->
+<div class="chatbot-container">
+  <div class="chat-toggle" id="chatToggle">💬</div>
+
+  <div class="chatbox" id="chatbox">
+    <div class="chat-header">
+       Shri Ji AgriTech Assistant
+      <span id="closeChat">✖</span>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="bot-message">
+        Hello 👋 Welcome to Shri Ji AgriTech Services.
+        How can I help you?
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" id="chatInput" placeholder="Type your message...">
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+  <!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <img src="images/logo.jpeg" alt="Shriji AgriTech Logo" class="footer-logo">
+      <p>Providing smart irrigation & modern agriculture solutions across India.</p>
+
+      <!-- SOCIAL ICONS -->
+      <div class="social-icons">
+        <a href="https://www.instagram.com/shrijiagritech/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.link/3utjo2" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/Shrijiagritech/" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.youtube.com/@shreeGagri" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="privacy.html">Legal</a>
+        <a href="order.html">Place Order</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-contact">
+      <h4>Contact Info</h4>
+      <p><i class="fas fa-phone"></i> +91 9452595862</p>
+      <p><i class="fas fa-envelope"></i> shrijiagritech@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Basantapur, Shahjahanpur, Uttar Pradesh, 242042</p>
+    </div>
+
+  </div>
+
+ <div class="footer-bottom">
+  <p>
+    © 2026 Shri Ji AgriTech. All Rights Reserved.
+    <br>
+    Designed & Developed by 
+    <a href="https://alphaaryx.vercel.app/" target="_blank" class="dev-link">
+      AlphaAryx (Aryan)
+    </a>
+  </p>
+</div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

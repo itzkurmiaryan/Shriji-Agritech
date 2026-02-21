@@ -1,0 +1,145 @@
+/* ===============================
+   ABOUT SECTION
+================================ */
+.about-section{
+  padding:120px 0 90px;
+  background:linear-gradient(to bottom,#0f2027,#1c2f36);
+}
+
+/* HEADING */
+.about-section h2{
+  font-size:38px;
+  font-weight:700;
+  background:linear-gradient(45deg,#00ff88,#00c3ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:25px;
+}
+
+/* FLEX LAYOUT */
+.about-wrapper{
+  display:flex;
+  gap:60px;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+/* TEXT SIDE */
+.about-text{
+  flex:1;
+  min-width:300px;
+}
+
+.about-text p{
+  font-size:17px;
+  line-height:1.8;
+  margin-bottom:18px;
+  color:#ddd;
+}
+
+/* SMALL IMAGE SIDE */
+.about-img{
+  flex:1;
+  min-width:300px;
+  position:relative;
+}
+
+.about-img img{
+  width:100%;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
+  transition:0.4s;
+}
+
+.about-img img:hover{
+  transform:scale(1.05);
+}
+
+/* HIGHLIGHT BOX */
+.about-highlight{
+  background:rgba(255,255,255,.08);
+  padding:25px;
+  border-radius:15px;
+  margin-top:30px;
+  border-left:4px solid #00ff88;
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.about-highlight h3{
+  margin-bottom:10px;
+  color:#00ff88;
+}
+
+/* ===============================
+   PARALLAX BIG IMAGE
+================================ */
+.parallax{
+  background:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef") center/cover fixed;
+  padding:140px 0;
+  text-align:center;
+  font-size:32px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#fff;
+  position:relative;
+}
+
+.parallax::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.6);
+}
+
+.parallax span{
+  position:relative;
+  z-index:1;
+  background:linear-gradient(45deg,#00ff88,#00c3ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Tablet */
+@media(max-width:992px){
+  .about-section h2{
+    font-size:30px;
+  }
+
+  .about-wrapper{
+    gap:40px;
+  }
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .about-wrapper{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .about-section{
+    padding:100px 0 60px;
+  }
+
+  .about-section h2{
+    font-size:26px;
+  }
+
+  .about-text p{
+    font-size:15px;
+  }
+
+  .parallax{
+    font-size:22px;
+    padding:100px 0;
+    background-attachment:scroll;
+  }
+}

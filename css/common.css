@@ -1,0 +1,234 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Poppins,sans-serif;
+  background:#0f2027;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+.container{width:90%;max-width:1200px;margin:auto}
+section{padding:90px 0}
+h2{text-align:center;margin-bottom:40px;font-size:32px}
+
+/* HEADER */
+header{
+  background:rgba(0,0,0,.8);
+  position:fixed;
+  width:100%;
+  z-index:1000;
+}
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0;
+}
+.log {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+nav{display:flex;gap:25px}
+nav a{color:#fff;text-decoration:none}
+.menu-toggle{display:none;font-size:24px;cursor:pointer}
+
+/* BUTTONS */
+.btn,.btn-outline{
+  padding:12px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  margin:5px;
+  display:inline-block;
+}
+.btn{
+  background:linear-gradient(45deg,#00ff88,#00c3ff);
+  color:#000;
+}
+.btn-outline{
+  border:2px solid #00ff88;
+  color:#00ff88;
+}
+
+/* GRID UNIVERSAL */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card,.product-card{
+  background:rgba(255,255,255,.08);
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  transition:.3s;
+}
+.card:hover,.product-card:hover{
+  transform:translateY(-10px);
+}
+
+.card i{
+  font-size:30px;
+  margin-bottom:15px;
+  color:#00ff88;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+/* FAQ */
+.faq-item{max-width:600px;margin:15px auto}
+.faq-question{
+  width:100%;
+  padding:15px;
+  border:none;
+  background:#222;
+  color:#fff;
+  cursor:pointer;
+}
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:.4s;
+  background:#333;
+  padding:0 15px;
+}
+.faq-answer.active{
+  padding:15px;
+  max-height:200px;
+}
+
+/* FOOTER */
+footer{background:#000;padding:40px 0}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:25px}
+
+/* FOOTER PREMIUM */
+footer {
+  background: #000;
+  padding: 60px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00ff88;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+  color: #00ff88;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+/* FOOTER LOGO */
+.footer-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00ff88;
+  padding: 5px;
+  background: rgba(255,255,255,0.05);
+  transition: 0.4s;
+}
+
+/* Hover Effect */
+.footer-logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0,255,136,0.6);
+}
+
+
+/* SOCIAL ICONS */
+.social-icons {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #00ff88;
+  color: #000;
+  transform: translateY(-5px);
+}
+
+
+
+/* WHATSAPP */
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25d366;padding:15px;border-radius:50%;color:#fff;font-size:22px}
+
+/* MOBILE */
+/* ===============================
+   MOBILE NAVIGATION FIX
+================================*/
+
+@media (max-width: 768px) {
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 260px;              /* Half screen type */
+    background: #111;
+    flex-direction: column;
+    padding: 80px 25px;
+    gap: 25px;
+    transition: 0.4s ease;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+}
+

@@ -1,0 +1,140 @@
+/* HERO */
+.hero{
+  height:100vh;
+  background:url("https://images.unsplash.com/photo-1464226184884-fa280b87c399")center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+.hero-overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(to right,rgba(0,0,0,.8),rgba(0,0,0,.4));
+}
+.hero-content{
+  position:relative;
+  z-index:1;
+  max-width:700px;
+}
+.hero h1{font-size:48px}
+.hero-buttons{margin-top:25px}
+
+/* STATS */
+.stats{background:#111}
+.stats-wrapper{
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  text-align:center;
+}
+.counter{
+  font-size:40px;
+  color:#00ff88;
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:28px}
+}
+
+/* ===============================
+   PRODUCT SLIDER
+=================================*/
+
+.product-slider-section {
+  padding: 60px 20px;
+  background: #0f2027;
+  color: white;
+  text-align: center;
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 10px;
+}
+
+.product-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Product Card */
+.product-card {
+  min-width: 250px;
+  flex: 0 0 auto;
+  background: linear-gradient(145deg,#1e3c47,#2c5364);
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Arrow Buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 25px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.slide-btn:hover {
+  background: #00ff88;
+  color: black;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.product-slider {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  scroll-behavior: auto;
+  white-space: nowrap;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .product-card {
+    min-width: 200px;
+  }
+}
