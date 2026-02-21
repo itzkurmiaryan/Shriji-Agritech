@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contactForm");
-  const overlay = document.getElementById("thankyouOverlay");
+  const overlay = document.getElementById("thankyouOverlay") || document.getElementById("thankYouOverlay");
   const productSelect = document.getElementById("product");
   const otherBox = document.getElementById("otherProductBox");
   const otherInput = document.getElementById("otherProduct");
 
-  otherBox.style.display = "none";
+  if(otherBox) otherBox.style.display = "none";
 
   productSelect.addEventListener("change", function () {
     if (this.value === "Other") {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  form.addEventListener("submit", async function (e) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const selectedProduct = productSelect.value === "Other" ? otherInput.value : productSelect.value;
@@ -31,25 +31,32 @@ document.addEventListener("DOMContentLoaded", function () {
       address: form.address.value,
       district: form.district.value,
       state: form.state.value,
-      message: form.message.value
+      message: form.message.value,
     };
 
+    const button = form.querySelector("button");
+    button.innerText = "Sending...";
+    button.disabled = true;
+
     try {
-      const res = await fetch("/api/place-order", {
+      const res = await fetch('http://localhost:5000/order', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
       const result = await res.json();
-      if (result.success) {
+      if(result.success){
         form.reset();
         otherBox.style.display = "none";
         overlay.classList.add("active");
-        setTimeout(() => overlay.classList.remove("active"), 3000);
-      } else alert("Order failed.");
+        setTimeout(()=> overlay.classList.remove("active"), 3000);
+      } else alert(result.message || "Order failed.");
     } catch (err) {
-      alert("Server Error!");
       console.error(err);
+      alert("Server error!");
     }
+
+    button.innerText = "Place Order";
+    button.disabled = false;
   });
 });

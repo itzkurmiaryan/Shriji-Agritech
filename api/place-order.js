@@ -1,50 +1,42 @@
-import nodemailer from "nodemailer";
+const express = require('express');
+const nodemailer = require('nodemailer');
+const router = express.Router();
 
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ success: false, message: "Method Not Allowed" });
-  }
+router.post('/order', async (req, res) => {
+  const { name, email, phone, product, quantity, address, district, state, message } = req.body;
 
-  const {
-    name, phone, email, product, quantity,
-    address, district, state, message
-  } = req.body;
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'ARYANMURADPUR2008@GMAIL.COM', // Gmail
+      pass: 'WLMPFSUZBHLRIDSA',    // Gmail App Password
+    },
+  });
 
-  if (!name || !phone || !product || !quantity || !address || !district || !state) {
-    return res.status(400).json({ success: false, message: "Missing required fields" });
-  }
+  let mailOptions = {
+    from: email,
+    to: 'YOUR_GMAIL@gmail.com',
+    subject: `New Order from ${name}`,
+    text: `
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Product: ${product}
+Quantity: ${quantity}
+Address: ${address}
+District: ${district}
+State: ${state}
+Message: ${message}
+    `
+  };
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    const mailOptions = {
-      from: `${name} <${email || process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO,
-      subject: `New Order from ${name}`,
-      text: `
-        Name: ${name}
-        Phone: ${phone}
-        Email: ${email}
-        Product: ${product}
-        Quantity: ${quantity}
-        Address: ${address}
-        District: ${district}
-        State: ${state}
-        Additional Message: ${message || "N/A"}
-      `,
-    };
-
     await transporter.sendMail(mailOptions);
-
-    res.status(200).json({ success: true });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, message: "Server Error" });
+    res.json({ success: true, message: 'Order email sent successfully!' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Order email sending failed.' });
   }
-}
+});
+
+module.exports = router;
