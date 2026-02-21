@@ -18,7 +18,9 @@ export default async function handler(req, res) {
       from: `"Website Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
       subject: `New Contact Message from ${name}`,
-      html: `<p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>`
+      html: `<p><b>Name:</b> ${name}</p>
+             <p><b>Email:</b> ${email}</p>
+             <p><b>Message:</b><br>${message}</p>`
     });
     res.status(200).json({ success: true });
   } catch (err) {
